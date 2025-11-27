@@ -26,52 +26,27 @@
             --error: #ef4444;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'DM Sans', sans-serif;
             background: var(--bg-primary);
             color: var(--text-primary);
             min-height: 100vh;
-            overflow-x: hidden;
         }
 
-        /* Animated Background */
         .bg-pattern {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             pointer-events: none;
             z-index: 0;
             opacity: 0.4;
             background: 
                 radial-gradient(ellipse 80% 50% at 20% 40%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse 60% 40% at 80% 60%, rgba(255, 107, 53, 0.06) 0%, transparent 50%),
-                radial-gradient(ellipse 40% 30% at 50% 80%, rgba(168, 85, 247, 0.05) 0%, transparent 50%);
+                radial-gradient(ellipse 60% 40% at 80% 60%, rgba(255, 107, 53, 0.06) 0%, transparent 50%);
         }
 
-        .grid-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            background-image: 
-                linear-gradient(rgba(42, 53, 69, 0.3) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(42, 53, 69, 0.3) 1px, transparent 1px);
-            background-size: 60px 60px;
-            opacity: 0.3;
-        }
-
-        /* Header */
         .header {
             position: relative;
             z-index: 10;
@@ -80,54 +55,26 @@
             align-items: center;
             justify-content: space-between;
             border-bottom: 1px solid var(--border-color);
-            background: rgba(10, 14, 20, 0.8);
+            background: rgba(10, 14, 20, 0.9);
             backdrop-filter: blur(20px);
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
+        .logo { display: flex; align-items: center; gap: 1rem; }
 
         .logo-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            width: 48px; height: 48px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             font-family: 'JetBrains Mono', monospace;
-            font-weight: 700;
-            font-size: 1.2rem;
+            font-weight: 700; font-size: 1.2rem;
             color: var(--bg-primary);
-            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
         }
 
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -0.02em;
-        }
-
-        .logo-subtitle {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
+        .logo-title { font-size: 1.4rem; font-weight: 700; }
+        .logo-subtitle { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
 
         .header-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
             padding: 0.5rem 1rem;
             background: rgba(240, 171, 0, 0.1);
             border: 1px solid rgba(240, 171, 0, 0.3);
@@ -136,111 +83,53 @@
             color: var(--sap-gold);
         }
 
-        .header-badge::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: var(--sap-gold);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        /* Main Container */
         .main-container {
-            position: relative;
-            z-index: 10;
-            max-width: 1600px;
-            margin: 0 auto;
-            padding: 2rem;
+            position: relative; z-index: 10;
+            max-width: 1600px; margin: 0 auto; padding: 2rem;
         }
 
-        /* Tab Navigation */
         .tab-nav {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-            background: var(--bg-secondary);
-            padding: 0.5rem;
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
+            display: flex; gap: 0.5rem; margin-bottom: 2rem;
+            background: var(--bg-secondary); padding: 0.5rem;
+            border-radius: 16px; border: 1px solid var(--border-color);
             width: fit-content;
         }
 
         .tab-btn {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 2rem;
-            background: transparent;
-            border: none;
-            border-radius: 12px;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            cursor: pointer;
+            display: flex; align-items: center; gap: 0.75rem;
+            padding: 1rem 2rem; background: transparent; border: none;
+            border-radius: 12px; font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem; font-weight: 600;
+            color: var(--text-secondary); cursor: pointer;
             transition: all 0.3s ease;
         }
 
-        .tab-btn:hover {
-            color: var(--text-primary);
-            background: var(--bg-tertiary);
-        }
-
+        .tab-btn:hover { color: var(--text-primary); background: var(--bg-tertiary); }
         .tab-btn.active {
             background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
             color: var(--bg-primary);
-            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
         }
 
-        .tab-icon {
-            width: 20px;
-            height: 20px;
-        }
-
-        /* Tab Content */
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.4s ease;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
+        .tab-icon { width: 20px; height: 20px; }
+        .tab-content { display: none; animation: fadeIn 0.4s ease; }
+        .tab-content.active { display: block; }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Cards */
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
+            border-radius: 20px; padding: 2rem; margin-bottom: 1.5rem;
         }
 
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
+        .card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
 
         .card-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 44px; height: 44px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
         }
 
         .card-icon.blue { background: rgba(0, 212, 255, 0.15); color: var(--accent-blue); }
@@ -248,313 +137,150 @@
         .card-icon.green { background: rgba(0, 255, 157, 0.15); color: var(--accent-green); }
         .card-icon.purple { background: rgba(168, 85, 247, 0.15); color: var(--accent-purple); }
 
-        .card-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
+        .card-title { font-size: 1.1rem; font-weight: 600; }
+        .card-description { font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem; }
 
-        .card-description {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-top: 0.25rem;
-        }
-
-        /* Form Elements */
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
+        .form-group { margin-bottom: 1.5rem; }
         .form-label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            margin-bottom: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            display: block; font-size: 0.85rem; font-weight: 600;
+            color: var(--text-secondary); margin-bottom: 0.75rem;
+            text-transform: uppercase; letter-spacing: 0.05em;
         }
 
         .form-textarea {
-            width: 100%;
-            min-height: 160px;
-            padding: 1.25rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.95rem;
-            color: var(--text-primary);
-            resize: vertical;
-            transition: all 0.3s ease;
+            width: 100%; min-height: 140px; padding: 1.25rem;
+            background: var(--bg-secondary); border: 1px solid var(--border-color);
+            border-radius: 12px; font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem; color: var(--text-primary);
+            resize: vertical; transition: all 0.3s ease;
         }
 
         .form-textarea:focus {
-            outline: none;
-            border-color: var(--accent-blue);
+            outline: none; border-color: var(--accent-blue);
             box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
         }
 
-        .form-textarea::placeholder {
-            color: var(--text-muted);
-        }
+        .form-textarea::placeholder { color: var(--text-muted); }
 
-        .form-input {
-            width: 100%;
-            padding: 1rem 1.25rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.95rem;
-            color: var(--text-primary);
-            transition: all 0.3s ease;
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+        .form-textarea.code-input {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem; min-height: 280px;
         }
 
         .form-select {
-            width: 100%;
-            padding: 1rem 1.25rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.95rem;
-            color: var(--text-primary);
-            cursor: pointer;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%238b98a9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            background-size: 18px;
+            width: 100%; padding: 1rem 1.25rem;
+            background: var(--bg-secondary); border: 1px solid var(--border-color);
+            border-radius: 12px; font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem; color: var(--text-primary); cursor: pointer;
         }
 
-        .form-select:focus {
-            outline: none;
-            border-color: var(--accent-blue);
-        }
+        .form-select:focus { outline: none; border-color: var(--accent-blue); }
 
-        /* Chips/Tags */
-        .chips-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 0.75rem;
-        }
+        .chips-container { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
 
         .chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border-color);
-            border-radius: 100px;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            cursor: pointer;
-            transition: all 0.2s ease;
+            padding: 0.5rem 1rem; background: var(--bg-tertiary);
+            border: 1px solid var(--border-color); border-radius: 100px;
+            font-size: 0.85rem; color: var(--text-secondary);
+            cursor: pointer; transition: all 0.2s ease;
         }
 
-        .chip:hover {
-            border-color: var(--accent-blue);
-            color: var(--accent-blue);
-        }
-
+        .chip:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
         .chip.selected {
             background: rgba(0, 212, 255, 0.15);
-            border-color: var(--accent-blue);
-            color: var(--accent-blue);
+            border-color: var(--accent-blue); color: var(--accent-blue);
         }
 
-        /* Grid Layout */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        @media (max-width: 1024px) { .grid-2 { grid-template-columns: 1fr; } }
 
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-        }
-
-        @media (max-width: 1024px) {
-            .grid-2, .grid-3 {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Buttons */
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 12px;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            display: inline-flex; align-items: center; justify-content: center;
+            gap: 0.75rem; padding: 1rem 2rem; border: none; border-radius: 12px;
+            font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600;
+            cursor: pointer; transition: all 0.3s ease;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
             color: var(--bg-primary);
-            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
         }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.4);
-        }
-
+        .btn-primary:hover { transform: translateY(-2px); }
         .btn-secondary {
-            background: var(--bg-tertiary);
-            color: var(--text-primary);
+            background: var(--bg-tertiary); color: var(--text-primary);
             border: 1px solid var(--border-color);
         }
 
-        .btn-secondary:hover {
-            border-color: var(--accent-blue);
-            color: var(--accent-blue);
-        }
+        .btn-secondary:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
+        .btn-group { display: flex; gap: 1rem; margin-top: 1.5rem; }
 
-        .btn-success {
-            background: linear-gradient(135deg, var(--accent-green) 0%, #00cc7d 100%);
-            color: var(--bg-primary);
-            box-shadow: 0 4px 20px rgba(0, 255, 157, 0.3);
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        /* Code Output */
         .code-output-container {
             background: var(--code-bg);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            overflow: hidden;
+            border-radius: 16px; overflow: hidden;
         }
 
         .code-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 1.5rem;
-            background: var(--bg-secondary);
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 1rem 1.5rem; background: var(--bg-secondary);
             border-bottom: 1px solid var(--border-color);
         }
 
-        .code-header-left {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .code-dots {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .code-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-
+        .code-header-left { display: flex; align-items: center; gap: 1rem; }
+        .code-dots { display: flex; gap: 0.5rem; }
+        .code-dot { width: 12px; height: 12px; border-radius: 50%; }
         .code-dot.red { background: #ff5f56; }
         .code-dot.yellow { background: #ffbd2e; }
         .code-dot.green { background: #27ca40; }
 
         .code-filename {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
+            font-size: 0.85rem; color: var(--text-secondary);
         }
 
-        .code-actions {
-            display: flex;
-            gap: 0.5rem;
-        }
+        .code-actions { display: flex; gap: 0.5rem; }
 
         .code-action-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            color: var(--text-secondary);
-            cursor: pointer;
-            transition: all 0.2s ease;
+            display: flex; align-items: center; justify-content: center;
+            width: 36px; height: 36px; background: var(--bg-tertiary);
+            border: 1px solid var(--border-color); border-radius: 8px;
+            color: var(--text-secondary); cursor: pointer; transition: all 0.2s ease;
         }
 
-        .code-action-btn:hover {
-            border-color: var(--accent-blue);
-            color: var(--accent-blue);
-        }
+        .code-action-btn:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
 
-        .code-content {
-            padding: 1.5rem;
-            max-height: 500px;
-            overflow: auto;
-        }
+        .code-content { padding: 1.5rem; max-height: 500px; overflow: auto; }
 
         .code-content pre {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            line-height: 1.7;
-            color: var(--text-primary);
-            white-space: pre-wrap;
-            margin: 0;
+            font-size: 0.85rem; line-height: 1.7;
+            color: var(--text-primary); white-space: pre-wrap;
+            word-wrap: break-word; margin: 0;
         }
 
-        /* Syntax Highlighting */
-        .keyword { color: var(--accent-purple); font-weight: 600; }
-        .string { color: var(--accent-green); }
-        .comment { color: var(--text-muted); font-style: italic; }
-        .type { color: var(--accent-blue); }
-        .number { color: var(--accent-orange); }
-        .operator { color: var(--sap-gold); }
-
-        /* Analysis Results */
-        .analysis-section {
-            margin-bottom: 1.5rem;
+        .metrics-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 1rem; margin-bottom: 1.5rem;
         }
 
-        .analysis-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
+        @media (max-width: 1024px) { .metrics-grid { grid-template-columns: repeat(2, 1fr); } }
+
+        .metric-card {
+            background: var(--bg-secondary); border: 1px solid var(--border-color);
+            border-radius: 12px; padding: 1.25rem; text-align: center;
         }
 
-        .analysis-title {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
+        .metric-value { font-size: 2rem; font-weight: 700; color: var(--accent-blue); line-height: 1; }
+        .metric-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; text-transform: uppercase; }
+
+        .analysis-section { margin-bottom: 1.5rem; }
+        .analysis-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+        .analysis-title { font-size: 1rem; font-weight: 600; }
 
         .analysis-badge {
-            padding: 0.25rem 0.75rem;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 600;
+            padding: 0.25rem 0.75rem; border-radius: 100px;
+            font-size: 0.75rem; font-weight: 600;
         }
 
         .badge-success { background: rgba(34, 197, 94, 0.15); color: var(--success); }
@@ -562,229 +288,75 @@
         .badge-error { background: rgba(239, 68, 68, 0.15); color: var(--error); }
         .badge-info { background: rgba(0, 212, 255, 0.15); color: var(--accent-blue); }
 
-        .analysis-list {
-            list-style: none;
-        }
+        .analysis-list { list-style: none; }
 
         .analysis-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            padding: 0.75rem 1rem;
-            background: var(--bg-secondary);
-            border-radius: 8px;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
+            display: flex; align-items: flex-start; gap: 0.75rem;
+            padding: 0.75rem 1rem; background: var(--bg-secondary);
+            border-radius: 8px; margin-bottom: 0.5rem;
+            font-size: 0.9rem; color: var(--text-secondary);
         }
 
         .analysis-item-icon {
-            flex-shrink: 0;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7rem;
+            flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 0.7rem;
         }
 
-        .analysis-item-icon.success { background: rgba(34, 197, 94, 0.2); color: var(--success); }
-        .analysis-item-icon.warning { background: rgba(234, 179, 8, 0.2); color: var(--warning); }
         .analysis-item-icon.error { background: rgba(239, 68, 68, 0.2); color: var(--error); }
+        .analysis-item-icon.warning { background: rgba(234, 179, 8, 0.2); color: var(--warning); }
         .analysis-item-icon.info { background: rgba(0, 212, 255, 0.2); color: var(--accent-blue); }
 
-        /* Metrics */
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        @media (max-width: 1024px) {
-            .metrics-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .metric-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.25rem;
-            text-align: center;
-        }
-
-        .metric-value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--accent-blue);
-            line-height: 1;
-        }
-
-        .metric-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* Loading State */
         .loading-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 14, 20, 0.9);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            gap: 1.5rem;
+            display: none; position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%; background: rgba(10, 14, 20, 0.9);
+            z-index: 1000; justify-content: center; align-items: center;
+            flex-direction: column; gap: 1.5rem;
         }
 
-        .loading-overlay.active {
-            display: flex;
-        }
+        .loading-overlay.active { display: flex; }
 
         .loading-spinner {
-            width: 60px;
-            height: 60px;
+            width: 60px; height: 60px;
             border: 3px solid var(--border-color);
             border-top-color: var(--accent-blue);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+            border-radius: 50%; animation: spin 1s linear infinite;
         }
 
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .loading-text { font-size: 1.1rem; color: var(--text-secondary); }
 
-        .loading-text {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-        }
-
-        /* Empty State */
-        .empty-state {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: var(--text-muted);
-        }
+        .empty-state { text-align: center; padding: 4rem 2rem; color: var(--text-muted); }
 
         .empty-state-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1.5rem;
-            background: var(--bg-tertiary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
+            width: 80px; height: 80px; margin: 0 auto 1.5rem;
+            background: var(--bg-tertiary); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
         }
 
-        .empty-state-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-        }
+        .empty-state-title { font-size: 1.25rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.5rem; }
 
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-secondary); }
+        ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
 
-        ::-webkit-scrollbar-track {
-            background: var(--bg-secondary);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--border-color);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--text-muted);
-        }
-
-        /* Tooltip */
-        .tooltip {
-            position: relative;
-        }
-
-        .tooltip::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 0.5rem 0.75rem;
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-size: 0.8rem;
-            color: var(--text-primary);
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.2s ease;
-        }
-
-        .tooltip:hover::after {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .main-container {
-                padding: 1rem;
-            }
-
-            .tab-nav {
-                width: 100%;
-            }
-
-            .tab-btn {
-                flex: 1;
-                padding: 0.75rem 1rem;
-                font-size: 0.85rem;
-            }
-
-            .btn-group {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
+            .header { flex-direction: column; gap: 1rem; }
+            .main-container { padding: 1rem; }
+            .tab-nav { width: 100%; }
+            .tab-btn { flex: 1; padding: 0.75rem; font-size: 0.85rem; }
+            .btn-group { flex-direction: column; }
+            .btn { width: 100%; }
         }
     </style>
 </head>
 <body>
     <div class="bg-pattern"></div>
-    <div class="grid-overlay"></div>
 
-    <!-- Loading Overlay -->
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loading-spinner"></div>
-        <div class="loading-text" id="loadingText">Generating ABAP code...</div>
+        <div class="loading-text" id="loadingText">Processing...</div>
     </div>
 
-    <!-- Header -->
     <header class="header">
         <div class="logo">
             <div class="logo-icon">AB</div>
@@ -793,35 +365,28 @@
                 <div class="logo-subtitle">SAP Development Assistant</div>
             </div>
         </div>
-        <div class="header-badge">
-            <span>AI-Powered</span>
-        </div>
+        <div class="header-badge">AI-Powered</div>
     </header>
 
-    <!-- Main Container -->
     <main class="main-container">
-        <!-- Tab Navigation -->
         <div class="tab-nav">
-            <button class="tab-btn active" onclick="switchTab('generate')">
+            <button class="tab-btn active" id="genTabBtn">
                 <svg class="tab-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
                 </svg>
                 Code Generator
             </button>
-            <button class="tab-btn" onclick="switchTab('refine')">
+            <button class="tab-btn" id="refTabBtn">
                 <svg class="tab-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
                 </svg>
-                Code Refiner & Analyzer
+                Code Refiner
             </button>
         </div>
 
-        <!-- Tab 1: Code Generator -->
         <div class="tab-content active" id="generateTab">
             <div class="grid-2">
-                <!-- Left Column: Input -->
                 <div>
-                    <!-- Requirements Card -->
                     <div class="card">
                         <div class="card-header">
                             <div class="card-icon blue">
@@ -835,11 +400,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-textarea" id="requirement" placeholder="Example: Create an ALV report that displays sales orders from VBAK table with customer name from KNA1, filtered by creation date range and sales organization. Include subtotals by customer and allow drill-down to line items..."></textarea>
+                            <textarea class="form-textarea" id="requirement" placeholder="Example: Create an ALV report that displays sales orders from VBAK table with customer name, filtered by date range and sales organization..."></textarea>
                         </div>
                     </div>
 
-                    <!-- Key Points Card -->
                     <div class="card">
                         <div class="card-header">
                             <div class="card-icon orange">
@@ -848,16 +412,15 @@
                                 </svg>
                             </div>
                             <div>
-                                <div class="card-title">Key Points & Specifications</div>
-                                <div class="card-description">Add specific requirements, table names, field names, etc.</div>
+                                <div class="card-title">Key Points</div>
+                                <div class="card-description">Tables, fields, specific requirements</div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-textarea" id="keyPoints" placeholder="- Tables: VBAK, VBAP, KNA1, MARA&#10;- Selection screen parameters: Date range, Sales Org, Customer&#10;- Fields needed: Order number, Customer, Material, Quantity, Value&#10;- Use new ABAP syntax (inline declarations, etc.)&#10;- Include proper error handling..."></textarea>
+                            <textarea class="form-textarea" id="keyPoints" placeholder="- Tables: VBAK, VBAP, KNA1&#10;- Fields: Order number, Customer, Material&#10;- Selection screen: Date range, Sales Org"></textarea>
                         </div>
                     </div>
 
-                    <!-- Configuration Card -->
                     <div class="card">
                         <div class="card-header">
                             <div class="card-icon green">
@@ -868,7 +431,7 @@
                             </div>
                             <div>
                                 <div class="card-title">Configuration</div>
-                                <div class="card-description">Select code type and preferences</div>
+                                <div class="card-description">Code type and preferences</div>
                             </div>
                         </div>
                         <div class="grid-2">
@@ -878,11 +441,9 @@
                                     <option value="report">Report Program</option>
                                     <option value="class">ABAP OO Class</option>
                                     <option value="function">Function Module</option>
-                                    <option value="badi">BAdI Implementation</option>
                                     <option value="cds">CDS View</option>
                                     <option value="rap">RAP Business Object</option>
                                     <option value="amdp">AMDP Procedure</option>
-                                    <option value="interface">Interface</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -895,34 +456,22 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Features to Include</label>
+                            <label class="form-label">Features</label>
                             <div class="chips-container" id="featuresContainer">
-                                <div class="chip selected" data-value="inline">Inline Declarations</div>
-                                <div class="chip selected" data-value="expressions">String Expressions</div>
-                                <div class="chip" data-value="exceptions">Exception Handling</div>
-                                <div class="chip" data-value="unit-test">Unit Test Class</div>
-                                <div class="chip" data-value="logging">Application Log</div>
-                                <div class="chip" data-value="authority">Authority Checks</div>
+                                <span class="chip selected" data-value="inline">Inline Declarations</span>
+                                <span class="chip selected" data-value="expressions">String Expressions</span>
+                                <span class="chip" data-value="exceptions">Exception Handling</span>
+                                <span class="chip" data-value="unit-test">Unit Test</span>
+                                <span class="chip" data-value="authority">Authority Checks</span>
                             </div>
                         </div>
                         <div class="btn-group">
-                            <button class="btn btn-primary" onclick="generateCode()">
-                                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                                </svg>
-                                Generate ABAP Code
-                            </button>
-                            <button class="btn btn-secondary" onclick="clearGeneratorForm()">
-                                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
-                                </svg>
-                                Clear
-                            </button>
+                            <button class="btn btn-primary" id="generateBtn">Generate ABAP Code</button>
+                            <button class="btn btn-secondary" id="clearGenBtn">Clear</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Column: Output -->
                 <div>
                     <div class="card">
                         <div class="card-header">
@@ -933,7 +482,7 @@
                             </div>
                             <div>
                                 <div class="card-title">Generated Code</div>
-                                <div class="card-description">Your ABAP code will appear here</div>
+                                <div class="card-description">Your ABAP code</div>
                             </div>
                         </div>
                         <div id="generatedCodeContainer">
@@ -944,7 +493,7 @@
                                     </svg>
                                 </div>
                                 <div class="empty-state-title">No Code Generated Yet</div>
-                                <p>Enter your requirements and click "Generate ABAP Code" to get started</p>
+                                <p>Enter requirements and click Generate</p>
                             </div>
                         </div>
                     </div>
@@ -952,12 +501,9 @@
             </div>
         </div>
 
-        <!-- Tab 2: Code Refiner -->
         <div class="tab-content" id="refineTab">
             <div class="grid-2">
-                <!-- Left Column: Input -->
                 <div>
-                    <!-- Code Input Card -->
                     <div class="card">
                         <div class="card-header">
                             <div class="card-icon orange">
@@ -967,14 +513,11 @@
                             </div>
                             <div>
                                 <div class="card-title">Your ABAP Code</div>
-                                <div class="card-description">Paste your existing ABAP code for analysis and refinement</div>
+                                <div class="card-description">Paste existing code for analysis</div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-textarea" id="inputCode" style="min-height: 350px; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;" placeholder="*&---------------------------------------------------------------------*
-*& Report  ZSALES_REPORT
-*&---------------------------------------------------------------------*
-REPORT zsales_report.
+                            <textarea class="form-textarea code-input" id="inputCode" placeholder="REPORT zsales_report.
 
 DATA: lt_vbak TYPE TABLE OF vbak,
       ls_vbak TYPE vbak.
@@ -982,12 +525,28 @@ DATA: lt_vbak TYPE TABLE OF vbak,
 SELECT * FROM vbak INTO TABLE lt_vbak.
 
 LOOP AT lt_vbak INTO ls_vbak.
-  WRITE: / ls_vbak-vbeln, ls_vbak-erdat.
+  WRITE: / ls_vbak-vbeln.
 ENDLOOP."></textarea>
                         </div>
                     </div>
 
-                    <!-- Refine Options Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon blue">
+                                <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="card-title">Additional Requirements</div>
+                                <div class="card-description">Describe changes or enhancements</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-textarea" id="refineRequirement" placeholder="Example: Add ALV display, convert to OO, add selection screen for date range, optimize SELECT..."></textarea>
+                        </div>
+                    </div>
+
                     <div class="card">
                         <div class="card-header">
                             <div class="card-icon green">
@@ -997,42 +556,28 @@ ENDLOOP."></textarea>
                             </div>
                             <div>
                                 <div class="card-title">Refinement Options</div>
-                                <div class="card-description">Choose what improvements to apply</div>
+                                <div class="card-description">Select improvements</div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Improvements to Apply</label>
                             <div class="chips-container" id="refineOptionsContainer">
-                                <div class="chip selected" data-value="modernize">Modernize Syntax</div>
-                                <div class="chip selected" data-value="performance">Optimize Performance</div>
-                                <div class="chip selected" data-value="debug">Debug & Fix Errors</div>
-                                <div class="chip" data-value="comments">Add Comments</div>
-                                <div class="chip" data-value="naming">Improve Naming</div>
-                                <div class="chip" data-value="oo">Convert to OO</div>
-                                <div class="chip" data-value="error-handling">Add Error Handling</div>
-                                <div class="chip" data-value="security">Security Check</div>
+                                <span class="chip selected" data-value="modernize">Modernize Syntax</span>
+                                <span class="chip selected" data-value="performance">Optimize Performance</span>
+                                <span class="chip selected" data-value="debug">Debug & Fix</span>
+                                <span class="chip" data-value="comments">Add Comments</span>
+                                <span class="chip" data-value="error-handling">Error Handling</span>
+                                <span class="chip" data-value="alv">Add ALV</span>
+                                <span class="chip" data-value="selection">Selection Screen</span>
                             </div>
                         </div>
                         <div class="btn-group">
-                            <button class="btn btn-primary" onclick="analyzeAndRefine()">
-                                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
-                                </svg>
-                                Analyze & Refine
-                            </button>
-                            <button class="btn btn-secondary" onclick="clearRefinerForm()">
-                                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
-                                </svg>
-                                Clear
-                            </button>
+                            <button class="btn btn-primary" id="refineBtn">Analyze & Refine</button>
+                            <button class="btn btn-secondary" id="clearRefBtn">Clear</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Column: Output -->
                 <div>
-                    <!-- Analysis Results Card -->
                     <div class="card" id="analysisCard" style="display: none;">
                         <div class="card-header">
                             <div class="card-icon blue">
@@ -1042,20 +587,13 @@ ENDLOOP."></textarea>
                             </div>
                             <div>
                                 <div class="card-title">Code Analysis</div>
-                                <div class="card-description">Issues found and improvements suggested</div>
+                                <div class="card-description">Issues and suggestions</div>
                             </div>
                         </div>
-                        
-                        <div class="metrics-grid" id="metricsGrid">
-                            <!-- Metrics will be populated dynamically -->
-                        </div>
-
-                        <div id="analysisResults">
-                            <!-- Analysis results will be populated dynamically -->
-                        </div>
+                        <div class="metrics-grid" id="metricsGrid"></div>
+                        <div id="analysisResults"></div>
                     </div>
 
-                    <!-- Refined Code Card -->
                     <div class="card">
                         <div class="card-header">
                             <div class="card-icon purple">
@@ -1065,7 +603,7 @@ ENDLOOP."></textarea>
                             </div>
                             <div>
                                 <div class="card-title">Refined Code</div>
-                                <div class="card-description">Your optimized and modernized ABAP code</div>
+                                <div class="card-description">Optimized output</div>
                             </div>
                         </div>
                         <div id="refinedCodeContainer">
@@ -1076,7 +614,7 @@ ENDLOOP."></textarea>
                                     </svg>
                                 </div>
                                 <div class="empty-state-title">No Code Refined Yet</div>
-                                <p>Paste your ABAP code and click "Analyze & Refine" to get started</p>
+                                <p>Paste code and click Analyze & Refine</p>
                             </div>
                         </div>
                     </div>
@@ -1086,1115 +624,459 @@ ENDLOOP."></textarea>
     </main>
 
     <script>
+        var generatedPlainCode = '';
+        var refinedPlainCode = '';
+
         // Tab switching
-        function switchTab(tabName) {
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-            
-            event.target.closest('.tab-btn').classList.add('active');
-            document.getElementById(tabName + 'Tab').classList.add('active');
-        }
+        document.getElementById('genTabBtn').addEventListener('click', function() {
+            document.getElementById('genTabBtn').classList.add('active');
+            document.getElementById('refTabBtn').classList.remove('active');
+            document.getElementById('generateTab').classList.add('active');
+            document.getElementById('refineTab').classList.remove('active');
+        });
+
+        document.getElementById('refTabBtn').addEventListener('click', function() {
+            document.getElementById('refTabBtn').classList.add('active');
+            document.getElementById('genTabBtn').classList.remove('active');
+            document.getElementById('refineTab').classList.add('active');
+            document.getElementById('generateTab').classList.remove('active');
+        });
 
         // Chip selection
-        document.querySelectorAll('.chip').forEach(chip => {
+        document.querySelectorAll('.chip').forEach(function(chip) {
             chip.addEventListener('click', function() {
                 this.classList.toggle('selected');
             });
         });
 
-        // Get selected chips
         function getSelectedChips(containerId) {
-            const container = document.getElementById(containerId);
-            const selected = [];
-            container.querySelectorAll('.chip.selected').forEach(chip => {
-                selected.push(chip.dataset.value);
+            var container = document.getElementById(containerId);
+            var selected = [];
+            container.querySelectorAll('.chip.selected').forEach(function(chip) {
+                selected.push(chip.getAttribute('data-value'));
             });
             return selected;
         }
 
-        // Show loading
         function showLoading(text) {
             document.getElementById('loadingText').textContent = text;
             document.getElementById('loadingOverlay').classList.add('active');
         }
 
-        // Hide loading
         function hideLoading() {
             document.getElementById('loadingOverlay').classList.remove('active');
         }
 
-        // Generate code output HTML
-        function createCodeOutput(code, filename) {
-            return `
-                <div class="code-output-container">
-                    <div class="code-header">
-                        <div class="code-header-left">
-                            <div class="code-dots">
-                                <div class="code-dot red"></div>
-                                <div class="code-dot yellow"></div>
-                                <div class="code-dot green"></div>
-                            </div>
-                            <div class="code-filename">${filename}</div>
-                        </div>
-                        <div class="code-actions">
-                            <button class="code-action-btn tooltip" data-tooltip="Copy Code" onclick="copyCode('${filename}')">
-                                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-                                </svg>
-                            </button>
-                            <button class="code-action-btn tooltip" data-tooltip="Download" onclick="downloadCode('${filename}')">
-                                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="code-content">
-                        <pre id="code-${filename}">${highlightABAP(code)}</pre>
-                    </div>
-                </div>
-            `;
+        function escapeHtml(text) {
+            return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
         }
 
-        // ABAP syntax highlighting
-        function highlightABAP(code) {
-            const keywords = ['REPORT', 'DATA', 'TYPES', 'BEGIN', 'END', 'OF', 'SELECT', 'FROM', 'INTO', 'TABLE', 'WHERE', 'LOOP', 'AT', 'ENDLOOP', 'IF', 'ELSE', 'ENDIF', 'ELSEIF', 'CASE', 'WHEN', 'ENDCASE', 'DO', 'ENDDO', 'WHILE', 'ENDWHILE', 'CALL', 'METHOD', 'FUNCTION', 'PERFORM', 'FORM', 'ENDFORM', 'CLASS', 'ENDCLASS', 'INTERFACE', 'ENDINTERFACE', 'PUBLIC', 'PRIVATE', 'PROTECTED', 'SECTION', 'METHODS', 'IMPORTING', 'EXPORTING', 'CHANGING', 'RETURNING', 'RAISING', 'TRY', 'CATCH', 'ENDTRY', 'CLEANUP', 'RAISE', 'EXCEPTION', 'MESSAGE', 'WRITE', 'SKIP', 'ULINE', 'NEW-LINE', 'FORMAT', 'PARAMETERS', 'SELECT-OPTIONS', 'AT SELECTION-SCREEN', 'START-OF-SELECTION', 'END-OF-SELECTION', 'TOP-OF-PAGE', 'END-OF-PAGE', 'INITIALIZATION', 'DEFINE', 'END-OF-DEFINITION', 'INCLUDE', 'TYPE-POOLS', 'CONSTANTS', 'FIELD-SYMBOLS', 'ASSIGN', 'UNASSIGN', 'APPEND', 'INSERT', 'MODIFY', 'DELETE', 'CLEAR', 'REFRESH', 'FREE', 'SORT', 'READ', 'BINARY SEARCH', 'TRANSPORTING', 'WITH KEY', 'ASSIGNING', 'REFERENCE INTO', 'FIELD-SYMBOL', 'CORRESPONDING', 'MOVE-CORRESPONDING', 'NEW', 'VALUE', 'REF', 'CONV', 'CAST', 'COND', 'SWITCH', 'REDUCE', 'FILTER', 'FOR', 'IN', 'LET', 'OPTIONAL', 'DEFAULT', 'ABSTRACT', 'FINAL', 'CREATE', 'OBJECT', 'INHERITING', 'REDEFINITION', 'ALIASES', 'EVENTS', 'HANDLERS', 'SET HANDLER', 'RAISE EVENT', 'ABAP'];
-            
-            const types = ['TYPE', 'STANDARD', 'SORTED', 'HASHED', 'REF TO', 'LIKE', 'STRING', 'XSTRING', 'I', 'INT8', 'P', 'DECFLOAT16', 'DECFLOAT34', 'F', 'C', 'N', 'D', 'T', 'X', 'ABAP_BOOL', 'ABAP_TRUE', 'ABAP_FALSE', 'SY-SUBRC', 'SY-TABIX', 'SY-INDEX', 'SY-DATUM', 'SY-UZEIT', 'SY-UNAME'];
+        function createCodeOutput(code, filename, targetVar) {
+            if (targetVar === 'generated') {
+                generatedPlainCode = code;
+            } else {
+                refinedPlainCode = code;
+            }
 
-            let result = code
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;');
+            var safeCode = escapeHtml(code);
 
-            // Comments
-            result = result.replace(/(".*$|\*.*$)/gm, '<span class="comment">$1</span>');
-            
-            // Strings
-            result = result.replace(/'([^']*)'/g, '<span class="string">\'$1\'</span>');
-            result = result.replace(/`([^`]*)`/g, '<span class="string">`$1`</span>');
-            
-            // Numbers
-            result = result.replace(/\b(\d+)\b/g, '<span class="number">$1</span>');
-            
-            // Keywords (case insensitive)
-            keywords.forEach(keyword => {
-                const regex = new RegExp(`\\b(${keyword})\\b`, 'gi');
-                result = result.replace(regex, '<span class="keyword">$1</span>');
-            });
-            
-            // Types
-            types.forEach(type => {
-                const regex = new RegExp(`\\b(${type.replace(/-/g, '\\-')})\\b`, 'gi');
-                result = result.replace(regex, '<span class="type">$1</span>');
-            });
+            var html = '<div class="code-output-container">';
+            html += '<div class="code-header">';
+            html += '<div class="code-header-left">';
+            html += '<div class="code-dots"><div class="code-dot red"></div><div class="code-dot yellow"></div><div class="code-dot green"></div></div>';
+            html += '<div class="code-filename">' + filename + '</div>';
+            html += '</div>';
+            html += '<div class="code-actions">';
+            html += '<button class="code-action-btn" onclick="copyCode(\'' + targetVar + '\')" title="Copy"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg></button>';
+            html += '<button class="code-action-btn" onclick="downloadCode(\'' + targetVar + '\', \'' + filename + '\')" title="Download"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg></button>';
+            html += '</div></div>';
+            html += '<div class="code-content"><pre>' + safeCode + '</pre></div>';
+            html += '</div>';
 
-            return result;
+            return html;
         }
 
-        // Copy code to clipboard
-        function copyCode(filename) {
-            const codeElement = document.getElementById('code-' + filename);
-            const text = codeElement.textContent;
-            navigator.clipboard.writeText(text).then(() => {
-                alert('Code copied to clipboard!');
+        function copyCode(targetVar) {
+            var code = targetVar === 'generated' ? generatedPlainCode : refinedPlainCode;
+            navigator.clipboard.writeText(code).then(function() {
+                alert('Code copied!');
             });
         }
 
-        // Download code
-        function downloadCode(filename) {
-            const codeElement = document.getElementById('code-' + filename);
-            const text = codeElement.textContent;
-            const blob = new Blob([text], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
+        function downloadCode(targetVar, filename) {
+            var code = targetVar === 'generated' ? generatedPlainCode : refinedPlainCode;
+            var blob = new Blob([code], { type: 'text/plain' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
             a.href = url;
             a.download = filename;
             a.click();
             URL.revokeObjectURL(url);
         }
 
-        // Store generated code for copying/downloading
-        let currentGeneratedCode = '';
-        let currentRefinedCode = '';
-
-        // Generate ABAP Code
-        async function generateCode() {
-            const requirement = document.getElementById('requirement').value.trim();
-            const keyPoints = document.getElementById('keyPoints').value.trim();
-            const codeType = document.getElementById('codeType').value;
-            const abapVersion = document.getElementById('abapVersion').value;
-            const features = getSelectedChips('featuresContainer');
+        // Generate button
+        document.getElementById('generateBtn').addEventListener('click', function() {
+            var requirement = document.getElementById('requirement').value.trim();
+            var keyPoints = document.getElementById('keyPoints').value.trim();
+            var codeType = document.getElementById('codeType').value;
+            var abapVersion = document.getElementById('abapVersion').value;
+            var features = getSelectedChips('featuresContainer');
 
             if (!requirement) {
-                alert('Please enter your requirement description.');
+                alert('Please enter your requirement.');
                 return;
             }
 
             showLoading('Generating ABAP code...');
 
-            // Simulate API call delay
-            await new Promise(resolve => setTimeout(resolve, 2000));
-
-            // Generate code based on inputs
-            const generatedCode = generateABAPCode(requirement, keyPoints, codeType, abapVersion, features);
-            currentGeneratedCode = generatedCode;
-
-            const container = document.getElementById('generatedCodeContainer');
-            container.innerHTML = createCodeOutput(generatedCode, 'z_generated_program.abap');
-
-            hideLoading();
-        }
-
-        // Generate ABAP code based on parameters
-        function generateABAPCode(requirement, keyPoints, codeType, abapVersion, features) {
-            const isModern = abapVersion === 'new' || abapVersion === 's4';
-            const hasInline = features.includes('inline');
-            const hasExpressions = features.includes('expressions');
-            const hasExceptions = features.includes('exceptions');
-            const hasLogging = features.includes('logging');
-            const hasAuthority = features.includes('authority');
-            const hasUnitTest = features.includes('unit-test');
-
-            let code = '';
-
-            if (codeType === 'report') {
-                code = generateReportCode(requirement, keyPoints, isModern, hasInline, hasExpressions, hasExceptions, hasLogging, hasAuthority);
-            } else if (codeType === 'class') {
-                code = generateClassCode(requirement, keyPoints, isModern, hasInline, hasExpressions, hasExceptions, hasUnitTest);
-            } else if (codeType === 'cds') {
-                code = generateCDSCode(requirement, keyPoints);
-            } else if (codeType === 'function') {
-                code = generateFunctionCode(requirement, keyPoints, isModern, hasExceptions);
-            } else if (codeType === 'rap') {
-                code = generateRAPCode(requirement, keyPoints);
-            } else if (codeType === 'amdp') {
-                code = generateAMDPCode(requirement, keyPoints);
-            } else {
-                code = generateReportCode(requirement, keyPoints, isModern, hasInline, hasExpressions, hasExceptions, hasLogging, hasAuthority);
-            }
-
-            return code;
-        }
-
-        // Generate Report Code
-        function generateReportCode(requirement, keyPoints, isModern, hasInline, hasExpressions, hasExceptions, hasLogging, hasAuthority) {
-            const tables = extractTables(keyPoints);
-            const fields = extractFields(keyPoints);
-            
-            let code = `*&---------------------------------------------------------------------*
-*& Report  Z_GENERATED_REPORT
-*&---------------------------------------------------------------------*
-*& Description: ${requirement.substring(0, 60)}...
-*& Generated by ABAP Code Studio
-*&---------------------------------------------------------------------*
-REPORT z_generated_report.
-
-`;
-
-            // Type definitions
-            code += `*----------------------------------------------------------------------*
-* Type Definitions
-*----------------------------------------------------------------------*
-TYPES: BEGIN OF ty_output,
-`;
-            fields.forEach((field, index) => {
-                code += `         ${field.name} TYPE ${field.type}${index < fields.length - 1 ? ',' : ''}\n`;
-            });
-            code += `       END OF ty_output,
-
-       tt_output TYPE STANDARD TABLE OF ty_output WITH EMPTY KEY.
-
-`;
-
-            // Data declarations
-            if (isModern && hasInline) {
-                code += `*----------------------------------------------------------------------*
-* Selection Screen
-*----------------------------------------------------------------------*
-PARAMETERS: p_bukrs TYPE bukrs OBLIGATORY.
-SELECT-OPTIONS: s_erdat FOR sy-datum.
-
-`;
-            } else {
-                code += `*----------------------------------------------------------------------*
-* Data Declarations
-*----------------------------------------------------------------------*
-DATA: gt_output TYPE tt_output,
-      gs_output TYPE ty_output.
-
-*----------------------------------------------------------------------*
-* Selection Screen
-*----------------------------------------------------------------------*
-PARAMETERS: p_bukrs TYPE bukrs OBLIGATORY.
-SELECT-OPTIONS: s_erdat FOR sy-datum.
-
-`;
-            }
-
-            // Authority check
-            if (hasAuthority) {
-                code += `*----------------------------------------------------------------------*
-* Authorization Check
-*----------------------------------------------------------------------*
-AT SELECTION-SCREEN.
-  AUTHORITY-CHECK OBJECT 'F_BKPF_BUK'
-    ID 'BUKRS' FIELD p_bukrs
-    ID 'ACTVT' FIELD '03'.
-  IF sy-subrc <> 0.
-    MESSAGE e001(00) WITH 'No authorization for company code' p_bukrs.
-  ENDIF.
-
-`;
-            }
-
-            // Main processing
-            code += `*----------------------------------------------------------------------*
-* Main Processing
-*----------------------------------------------------------------------*
-START-OF-SELECTION.
-
-`;
-
-            if (hasExceptions) {
-                code += `  TRY.
-      PERFORM select_data.
-      PERFORM display_alv.
-    CATCH cx_root INTO DATA(lx_error).
-      MESSAGE lx_error->get_text( ) TYPE 'E'.
-  ENDTRY.
-
-`;
-            } else {
-                code += `  PERFORM select_data.
-  PERFORM display_alv.
-
-`;
-            }
-
-            // Form routines
-            code += `*&---------------------------------------------------------------------*
-*& Form SELECT_DATA
-*&---------------------------------------------------------------------*
-FORM select_data.
-
-`;
-
-            if (isModern && hasInline) {
-                code += `  SELECT ${fields.map(f => f.name).join(', ')}
-    FROM ${tables[0] || 'vbak'}
-    INTO TABLE @DATA(gt_output)
-    WHERE erdat IN @s_erdat.
-
-  IF sy-subrc <> 0.
-    MESSAGE 'No data found' TYPE 'S' DISPLAY LIKE 'W'.
-    RETURN.
-  ENDIF.
-
-`;
-            } else {
-                code += `  SELECT ${fields.map(f => f.name).join(' ')}
-    FROM ${tables[0] || 'vbak'}
-    INTO TABLE gt_output
-    WHERE erdat IN s_erdat.
-
-  IF sy-subrc <> 0.
-    MESSAGE 'No data found' TYPE 'S' DISPLAY LIKE 'W'.
-    RETURN.
-  ENDIF.
-
-`;
-            }
-
-            code += `ENDFORM.
-
-`;
-
-            // ALV Display
-            code += `*&---------------------------------------------------------------------*
-*& Form DISPLAY_ALV
-*&---------------------------------------------------------------------*
-FORM display_alv.
-
-`;
-
-            if (isModern) {
-                code += `  TRY.
-      cl_salv_table=>factory(
-        IMPORTING
-          r_salv_table = DATA(lo_alv)
-        CHANGING
-          t_table      = gt_output ).
-
-      " Set ALV properties
-      DATA(lo_columns) = lo_alv->get_columns( ).
-      lo_columns->set_optimize( ).
-
-      DATA(lo_functions) = lo_alv->get_functions( ).
-      lo_functions->set_all( ).
-
-      DATA(lo_display) = lo_alv->get_display_settings( ).
-      lo_display->set_striped_pattern( abap_true ).
-      lo_display->set_list_header( 'Generated Report Output' ).
-
-      lo_alv->display( ).
-
-    CATCH cx_salv_msg INTO DATA(lx_salv).
-      MESSAGE lx_salv->get_text( ) TYPE 'E'.
-  ENDTRY.
-
-`;
-            } else {
-                code += `  DATA: lo_alv TYPE REF TO cl_salv_table.
-
-  TRY.
-      cl_salv_table=>factory(
-        IMPORTING
-          r_salv_table = lo_alv
-        CHANGING
-          t_table      = gt_output ).
-
-      lo_alv->display( ).
-
-    CATCH cx_salv_msg.
-      MESSAGE 'Error displaying ALV' TYPE 'E'.
-  ENDTRY.
-
-`;
-            }
-
-            code += `ENDFORM.`;
-
-            return code;
-        }
-
-        // Generate Class Code
-        function generateClassCode(requirement, keyPoints, isModern, hasInline, hasExpressions, hasExceptions, hasUnitTest) {
-            const className = 'zcl_generated_class';
-            
-            let code = `*----------------------------------------------------------------------*
-* Class Definition: ${className.toUpperCase()}
-*----------------------------------------------------------------------*
-* Description: ${requirement.substring(0, 50)}...
-* Generated by ABAP Code Studio
-*----------------------------------------------------------------------*
-CLASS ${className} DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC.
-
-  PUBLIC SECTION.
-    TYPES: BEGIN OF ty_result,
-             success TYPE abap_bool,
-             message TYPE string,
-             data    TYPE REF TO data,
-           END OF ty_result.
-
-    METHODS:
-      constructor,
-      
-      execute
-        IMPORTING
-          iv_input TYPE string
-        RETURNING
-          VALUE(rs_result) TYPE ty_result
-        RAISING
-          cx_static_check,
-          
-      get_data
-        RETURNING
-          VALUE(rt_data) TYPE STANDARD TABLE.
-
-  PROTECTED SECTION.
-
-  PRIVATE SECTION.
-    DATA: mv_initialized TYPE abap_bool,
-          mt_data        TYPE STANDARD TABLE OF string.
-
-    METHODS:
-      validate_input
-        IMPORTING
-          iv_input TYPE string
-        RETURNING
-          VALUE(rv_valid) TYPE abap_bool,
-          
-      process_data
-        IMPORTING
-          iv_input TYPE string
-        EXPORTING
-          et_result TYPE STANDARD TABLE.
-
-ENDCLASS.
-
-*----------------------------------------------------------------------*
-* Class Implementation
-*----------------------------------------------------------------------*
-CLASS ${className} IMPLEMENTATION.
-
-  METHOD constructor.
-    mv_initialized = abap_true.
-  ENDMETHOD.
-
-  METHOD execute.
-    " Validate input
-    IF validate_input( iv_input ) = abap_false.
-      rs_result = VALUE #( 
-        success = abap_false 
-        message = |Invalid input: { iv_input }| 
-      ).
-      RETURN.
-    ENDIF.
-
-    " Process data
-    TRY.
-        process_data(
-          EXPORTING
-            iv_input = iv_input
-          IMPORTING
-            et_result = DATA(lt_result) ).
-
-        " Create result
-        rs_result = VALUE #(
-          success = abap_true
-          message = |Processed { lines( lt_result ) } records|
-        ).
-
-        " Store result reference
-        GET REFERENCE OF lt_result INTO rs_result-data.
-
-      CATCH cx_root INTO DATA(lx_error).
-        rs_result = VALUE #(
-          success = abap_false
-          message = lx_error->get_text( )
-        ).
-    ENDTRY.
-  ENDMETHOD.
-
-  METHOD get_data.
-    rt_data = mt_data.
-  ENDMETHOD.
-
-  METHOD validate_input.
-    rv_valid = xsdbool( iv_input IS NOT INITIAL ).
-  ENDMETHOD.
-
-  METHOD process_data.
-    " Implementation placeholder
-    " Add your business logic here
-    CLEAR et_result.
-  ENDMETHOD.
-
-ENDCLASS.`;
-
-            if (hasUnitTest) {
-                code += `
-
-*----------------------------------------------------------------------*
-* Unit Test Class
-*----------------------------------------------------------------------*
-CLASS ltcl_test DEFINITION FINAL FOR TESTING
-  DURATION SHORT
-  RISK LEVEL HARMLESS.
-
-  PRIVATE SECTION.
-    DATA: mo_cut TYPE REF TO ${className}.
-
-    METHODS:
-      setup,
-      test_execute_success FOR TESTING,
-      test_execute_invalid_input FOR TESTING,
-      test_validate_input FOR TESTING.
-
-ENDCLASS.
-
-CLASS ltcl_test IMPLEMENTATION.
-
-  METHOD setup.
-    mo_cut = NEW #( ).
-  ENDMETHOD.
-
-  METHOD test_execute_success.
-    DATA(ls_result) = mo_cut->execute( 'valid_input' ).
-    cl_abap_unit_assert=>assert_true( ls_result-success ).
-  ENDMETHOD.
-
-  METHOD test_execute_invalid_input.
-    DATA(ls_result) = mo_cut->execute( '' ).
-    cl_abap_unit_assert=>assert_false( ls_result-success ).
-  ENDMETHOD.
-
-  METHOD test_validate_input.
-    " Test with valid input
-    cl_abap_unit_assert=>assert_true(
-      mo_cut->validate_input( 'test' ) ).
-      
-    " Test with empty input
-    cl_abap_unit_assert=>assert_false(
-      mo_cut->validate_input( '' ) ).
-  ENDMETHOD.
-
-ENDCLASS.`;
-            }
-
-            return code;
-        }
-
-        // Generate CDS Code
-        function generateCDSCode(requirement, keyPoints) {
-            const tables = extractTables(keyPoints);
-            const baseTable = tables[0] || 'vbak';
-
-            return `@AbapCatalog.sqlViewName: 'ZV_GENERATED'
-@AbapCatalog.compiler.compareFilter: true
-@AbapCatalog.preserveKey: true
-@AccessControl.authorizationCheck: #CHECK
-@EndUserText.label: '${requirement.substring(0, 40)}'
-
-@VDM.viewType: #COMPOSITE
-@Analytics.dataCategory: #CUBE
-
-define view Z_I_Generated
-  as select from ${baseTable} as Header
-  
-  association [0..1] to I_Customer      as _Customer     on $projection.Customer = _Customer.Customer
-  association [0..1] to I_SalesDocument as _SalesDoc     on $projection.SalesDocument = _SalesDoc.SalesDocument
-
-{
-      @ObjectModel.text.association: '_Customer'
-  key Header.vbeln as SalesDocument,
-  
-      @Semantics.customer.id: true
-      Header.kunnr as Customer,
-      
-      @Semantics.businessDate.createdAt: true
-      Header.erdat as CreationDate,
-      
-      @Semantics.businessDate.lastChangedAt: true
-      Header.aedat as ChangeDate,
-      
-      @Semantics.amount.currencyCode: 'DocumentCurrency'
-      Header.netwr as NetValue,
-      
-      @Semantics.currencyCode: true
-      Header.waerk as DocumentCurrency,
-      
-      Header.auart as SalesDocumentType,
-      Header.vkorg as SalesOrganization,
-      Header.vtweg as DistributionChannel,
-      Header.spart as Division,
-
-      /* Associations */
-      _Customer,
-      _SalesDoc
-}
-where Header.vbtyp = 'C'  -- Sales Orders only`;
-        }
-
-        // Generate Function Module Code
-        function generateFunctionCode(requirement, keyPoints, isModern, hasExceptions) {
-            return `FUNCTION z_generated_function.
-*"----------------------------------------------------------------------
-*"*"Local Interface:
-*"  IMPORTING
-*"     VALUE(IV_INPUT) TYPE  STRING
-*"  EXPORTING
-*"     VALUE(ES_RESULT) TYPE  ZSTRUCTURE
-*"  TABLES
-*"      ET_DATA STRUCTURE  ZSTRUCTURE
-*"  EXCEPTIONS
-*"      INVALID_INPUT
-*"      PROCESSING_ERROR
-*"----------------------------------------------------------------------
-
-* Description: ${requirement.substring(0, 50)}...
-* Generated by ABAP Code Studio
-
-  " Validate input
-  IF iv_input IS INITIAL.
-    RAISE invalid_input.
-  ENDIF.
-
-  " Initialize result
-  CLEAR: es_result, et_data[].
-
-  TRY.
-      " Main processing logic
-      DATA(lv_processed) = process_input( iv_input ).
-      
-      " Fill result structure
-      es_result = VALUE #(
-        status  = 'S'
-        message = |Successfully processed: { iv_input }|
-        count   = lines( et_data )
-      ).
-
-    CATCH cx_root INTO DATA(lx_error).
-      es_result = VALUE #(
-        status  = 'E'
-        message = lx_error->get_text( )
-      ).
-      RAISE processing_error.
-  ENDTRY.
-
-ENDFUNCTION.`;
-        }
-
-        // Generate RAP Code
-        function generateRAPCode(requirement, keyPoints) {
-            return `managed implementation in class zbp_i_generated unique;
-strict ( 2 );
-
-define behavior for Z_I_Generated alias Generated
-persistent table ztable_gen
-lock master
-authorization master ( instance )
-//etag master <field_name>
-{
-  field ( readonly ) 
-    GeneratedUUID,
-    CreatedAt,
-    CreatedBy,
-    LastChangedAt,
-    LastChangedBy;
-
-  field ( numbering : managed ) 
-    GeneratedUUID;
-
-  create;
-  update;
-  delete;
-
-  determination setDefaults on modify { create; }
-  validation validateData on save { create; update; }
-
-  action ( features : instance ) approve result [1] $self;
-  action ( features : instance ) reject result [1] $self;
-
-  mapping for ztable_gen
-  {
-    GeneratedUUID   = generated_uuid;
-    Description     = description;
-    Status          = status;
-    CreatedAt       = created_at;
-    CreatedBy       = created_by;
-    LastChangedAt   = last_changed_at;
-    LastChangedBy   = last_changed_by;
-  }
-}`;
-        }
-
-        // Generate AMDP Code
-        function generateAMDPCode(requirement, keyPoints) {
-            const tables = extractTables(keyPoints);
-            const baseTable = tables[0] || 'vbak';
-
-            return `CLASS zcl_amdp_generated DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC.
-
-  PUBLIC SECTION.
-    INTERFACES if_amdp_marker_hdb.
-
-    TYPES: BEGIN OF ty_result,
-             vbeln TYPE vbeln,
-             kunnr TYPE kunnr,
-             netwr TYPE netwr_ak,
-             waerk TYPE waers,
-           END OF ty_result,
-           tt_result TYPE STANDARD TABLE OF ty_result WITH EMPTY KEY.
-
-    CLASS-METHODS:
-      get_sales_data
-        IMPORTING
-          VALUE(iv_vkorg) TYPE vkorg
-          VALUE(iv_erdat) TYPE erdat
-        EXPORTING
-          VALUE(et_result) TYPE tt_result.
-
-ENDCLASS.
-
-CLASS zcl_amdp_generated IMPLEMENTATION.
-
-  METHOD get_sales_data BY DATABASE PROCEDURE
-                        FOR HDB
-                        LANGUAGE SQLSCRIPT
-                        OPTIONS READ-ONLY
-                        USING ${baseTable}.
-
-    et_result = SELECT vbeln,
-                       kunnr,
-                       netwr,
-                       waerk
-                FROM ${baseTable}
-                WHERE vkorg = :iv_vkorg
-                  AND erdat >= :iv_erdat
-                ORDER BY vbeln;
-
-  ENDMETHOD.
-
-ENDCLASS.`;
-        }
-
-        // Extract tables from key points
-        function extractTables(keyPoints) {
-            const tablePattern = /(?:tables?|from|join)[\s:]*([a-z0-9_]+)/gi;
-            const matches = [];
-            let match;
-            while ((match = tablePattern.exec(keyPoints)) !== null) {
-                matches.push(match[1].toLowerCase());
-            }
-            return matches.length > 0 ? matches : ['vbak', 'vbap', 'kna1'];
-        }
-
-        // Extract fields from key points
-        function extractFields(keyPoints) {
-            const defaultFields = [
-                { name: 'vbeln', type: 'vbeln' },
-                { name: 'erdat', type: 'erdat' },
-                { name: 'kunnr', type: 'kunnr' },
-                { name: 'netwr', type: 'netwr_ak' },
-                { name: 'waerk', type: 'waers' }
-            ];
-            return defaultFields;
-        }
-
-        // Analyze and Refine Code
-        async function analyzeAndRefine() {
-            const inputCode = document.getElementById('inputCode').value.trim();
-            const refineOptions = getSelectedChips('refineOptionsContainer');
+            setTimeout(function() {
+                var code = generateABAPCode(requirement, keyPoints, codeType, abapVersion, features);
+                document.getElementById('generatedCodeContainer').innerHTML = createCodeOutput(code, 'z_generated.abap', 'generated');
+                hideLoading();
+            }, 1000);
+        });
+
+        // Clear generator
+        document.getElementById('clearGenBtn').addEventListener('click', function() {
+            document.getElementById('requirement').value = '';
+            document.getElementById('keyPoints').value = '';
+            document.getElementById('generatedCodeContainer').innerHTML = '<div class="empty-state"><div class="empty-state-icon"><svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></div><div class="empty-state-title">No Code Generated Yet</div><p>Enter requirements and click Generate</p></div>';
+        });
+
+        // Refine button
+        document.getElementById('refineBtn').addEventListener('click', function() {
+            var inputCode = document.getElementById('inputCode').value.trim();
+            var refineReq = document.getElementById('refineRequirement').value.trim();
+            var options = getSelectedChips('refineOptionsContainer');
 
             if (!inputCode) {
-                alert('Please enter your ABAP code to analyze.');
+                alert('Please enter code to analyze.');
                 return;
             }
 
-            showLoading('Analyzing and refining code...');
+            showLoading('Analyzing code...');
 
-            // Simulate API call delay
-            await new Promise(resolve => setTimeout(resolve, 2500));
+            setTimeout(function() {
+                var analysis = analyzeCode(inputCode, options);
+                document.getElementById('analysisCard').style.display = 'block';
+                displayMetrics(analysis.metrics);
+                displayAnalysis(analysis.issues);
 
-            // Analyze code
-            const analysis = analyzeCode(inputCode, refineOptions);
-            
-            // Show analysis card
-            document.getElementById('analysisCard').style.display = 'block';
-            
-            // Display metrics
-            displayMetrics(analysis.metrics);
-            
-            // Display analysis results
-            displayAnalysis(analysis.issues);
+                var refined = refineCode(inputCode, options, refineReq);
+                document.getElementById('refinedCodeContainer').innerHTML = createCodeOutput(refined, 'z_refined.abap', 'refined');
+                hideLoading();
+            }, 1000);
+        });
 
-            // Generate refined code
-            const refinedCode = refineCode(inputCode, refineOptions);
-            currentRefinedCode = refinedCode;
+        // Clear refiner
+        document.getElementById('clearRefBtn').addEventListener('click', function() {
+            document.getElementById('inputCode').value = '';
+            document.getElementById('refineRequirement').value = '';
+            document.getElementById('analysisCard').style.display = 'none';
+            document.getElementById('refinedCodeContainer').innerHTML = '<div class="empty-state"><div class="empty-state-icon"><svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></div><div class="empty-state-title">No Code Refined Yet</div><p>Paste code and click Analyze & Refine</p></div>';
+        });
 
-            const container = document.getElementById('refinedCodeContainer');
-            container.innerHTML = createCodeOutput(refinedCode, 'z_refined_program.abap');
+        function generateABAPCode(requirement, keyPoints, codeType, abapVersion, features) {
+            var isModern = abapVersion === 'new' || abapVersion === 's4';
+            var hasExceptions = features.indexOf('exceptions') >= 0;
+            var hasAuthority = features.indexOf('authority') >= 0;
+            var hasUnitTest = features.indexOf('unit-test') >= 0;
 
-            hideLoading();
+            if (codeType === 'class') return generateClassCode(requirement, isModern, hasUnitTest);
+            if (codeType === 'cds') return generateCDSCode(requirement);
+            if (codeType === 'function') return generateFunctionCode(requirement);
+            if (codeType === 'rap') return generateRAPCode();
+            if (codeType === 'amdp') return generateAMDPCode();
+            return generateReportCode(requirement, keyPoints, isModern, hasExceptions, hasAuthority);
         }
 
-        // Analyze code
+        function generateReportCode(req, keyPoints, isModern, hasExc, hasAuth) {
+            var code = '*&---------------------------------------------------------------------*\n';
+            code += '*& Report  Z_GENERATED_REPORT\n';
+            code += '*&---------------------------------------------------------------------*\n';
+            code += '*& ' + req.substring(0, 60) + '\n';
+            code += '*&---------------------------------------------------------------------*\n';
+            code += 'REPORT z_generated_report.\n\n';
+
+            code += 'TYPES: BEGIN OF ty_output,\n';
+            code += '         vbeln TYPE vbeln,\n';
+            code += '         erdat TYPE erdat,\n';
+            code += '         kunnr TYPE kunnr,\n';
+            code += '         netwr TYPE netwr_ak,\n';
+            code += '       END OF ty_output.\n\n';
+
+            code += 'DATA: gt_output TYPE TABLE OF ty_output.\n\n';
+
+            code += 'PARAMETERS: p_vkorg TYPE vkorg OBLIGATORY.\n';
+            code += 'SELECT-OPTIONS: s_erdat FOR sy-datum.\n\n';
+
+            if (hasAuth) {
+                code += 'AT SELECTION-SCREEN.\n';
+                code += '  AUTHORITY-CHECK OBJECT \'V_VBAK_VKO\'\n';
+                code += '    ID \'VKORG\' FIELD p_vkorg\n';
+                code += '    ID \'ACTVT\' FIELD \'03\'.\n';
+                code += '  IF sy-subrc <> 0.\n';
+                code += '    MESSAGE \'No authorization\' TYPE \'E\'.\n';
+                code += '  ENDIF.\n\n';
+            }
+
+            code += 'START-OF-SELECTION.\n\n';
+
+            if (hasExc) {
+                code += '  TRY.\n';
+                code += '      PERFORM select_data.\n';
+                code += '      PERFORM display_alv.\n';
+                code += '    CATCH cx_root INTO DATA(lx_error).\n';
+                code += '      MESSAGE lx_error->get_text( ) TYPE \'E\'.\n';
+                code += '  ENDTRY.\n\n';
+            } else {
+                code += '  PERFORM select_data.\n';
+                code += '  PERFORM display_alv.\n\n';
+            }
+
+            code += '*&---------------------------------------------------------------------*\n';
+            code += '*& Form SELECT_DATA\n';
+            code += '*&---------------------------------------------------------------------*\n';
+            code += 'FORM select_data.\n\n';
+
+            if (isModern) {
+                code += '  SELECT vbeln, erdat, kunnr, netwr\n';
+                code += '    FROM vbak\n';
+                code += '    INTO TABLE @gt_output\n';
+                code += '    WHERE vkorg = @p_vkorg\n';
+                code += '      AND erdat IN @s_erdat.\n\n';
+            } else {
+                code += '  SELECT vbeln erdat kunnr netwr\n';
+                code += '    FROM vbak\n';
+                code += '    INTO TABLE gt_output\n';
+                code += '    WHERE vkorg = p_vkorg\n';
+                code += '      AND erdat IN s_erdat.\n\n';
+            }
+
+            code += '  IF sy-subrc <> 0.\n';
+            code += '    MESSAGE \'No data found\' TYPE \'S\' DISPLAY LIKE \'W\'.\n';
+            code += '  ENDIF.\n\n';
+            code += 'ENDFORM.\n\n';
+
+            code += '*&---------------------------------------------------------------------*\n';
+            code += '*& Form DISPLAY_ALV\n';
+            code += '*&---------------------------------------------------------------------*\n';
+            code += 'FORM display_alv.\n\n';
+            code += '  TRY.\n';
+            code += '      cl_salv_table=>factory(\n';
+            code += '        IMPORTING r_salv_table = DATA(lo_alv)\n';
+            code += '        CHANGING t_table = gt_output ).\n\n';
+            code += '      lo_alv->get_columns( )->set_optimize( ).\n';
+            code += '      lo_alv->get_functions( )->set_all( ).\n';
+            code += '      lo_alv->display( ).\n\n';
+            code += '    CATCH cx_salv_msg.\n';
+            code += '      MESSAGE \'ALV Error\' TYPE \'E\'.\n';
+            code += '  ENDTRY.\n\n';
+            code += 'ENDFORM.';
+
+            return code;
+        }
+
+        function generateClassCode(req, isModern, hasTest) {
+            var code = 'CLASS zcl_generated DEFINITION PUBLIC FINAL CREATE PUBLIC.\n\n';
+            code += '  PUBLIC SECTION.\n';
+            code += '    TYPES: BEGIN OF ty_result,\n';
+            code += '             success TYPE abap_bool,\n';
+            code += '             message TYPE string,\n';
+            code += '           END OF ty_result.\n\n';
+            code += '    METHODS:\n';
+            code += '      constructor,\n';
+            code += '      execute\n';
+            code += '        IMPORTING iv_input TYPE string\n';
+            code += '        RETURNING VALUE(rs_result) TYPE ty_result.\n\n';
+            code += '  PRIVATE SECTION.\n';
+            code += '    DATA: mv_init TYPE abap_bool.\n\n';
+            code += 'ENDCLASS.\n\n';
+
+            code += 'CLASS zcl_generated IMPLEMENTATION.\n\n';
+            code += '  METHOD constructor.\n';
+            code += '    mv_init = abap_true.\n';
+            code += '  ENDMETHOD.\n\n';
+            code += '  METHOD execute.\n';
+            code += '    IF iv_input IS INITIAL.\n';
+            code += '      rs_result = VALUE #( success = abap_false message = \'Empty input\' ).\n';
+            code += '      RETURN.\n';
+            code += '    ENDIF.\n\n';
+            code += '    rs_result = VALUE #( success = abap_true message = |Processed: { iv_input }| ).\n';
+            code += '  ENDMETHOD.\n\n';
+            code += 'ENDCLASS.';
+
+            if (hasTest) {
+                code += '\n\n';
+                code += 'CLASS ltcl_test DEFINITION FOR TESTING DURATION SHORT RISK LEVEL HARMLESS.\n';
+                code += '  PRIVATE SECTION.\n';
+                code += '    METHODS test_execute FOR TESTING.\n';
+                code += 'ENDCLASS.\n\n';
+                code += 'CLASS ltcl_test IMPLEMENTATION.\n';
+                code += '  METHOD test_execute.\n';
+                code += '    DATA(lo_cut) = NEW zcl_generated( ).\n';
+                code += '    DATA(ls_result) = lo_cut->execute( \'test\' ).\n';
+                code += '    cl_abap_unit_assert=>assert_true( ls_result-success ).\n';
+                code += '  ENDMETHOD.\n';
+                code += 'ENDCLASS.';
+            }
+
+            return code;
+        }
+
+        function generateCDSCode(req) {
+            var code = '@AbapCatalog.sqlViewName: \'ZV_GENERATED\'\n';
+            code += '@AccessControl.authorizationCheck: #CHECK\n';
+            code += '@EndUserText.label: \'' + req.substring(0, 40) + '\'\n\n';
+            code += 'define view Z_I_Generated as select from vbak {\n';
+            code += '  key vbeln as SalesDocument,\n';
+            code += '      kunnr as Customer,\n';
+            code += '      erdat as CreationDate,\n';
+            code += '      netwr as NetValue,\n';
+            code += '      waerk as Currency\n';
+            code += '}';
+            return code;
+        }
+
+        function generateFunctionCode(req) {
+            var code = 'FUNCTION z_generated_func.\n';
+            code += '*" IMPORTING iv_input TYPE string\n';
+            code += '*" EXPORTING ev_output TYPE string\n';
+            code += '*" EXCEPTIONS invalid_input\n\n';
+            code += '  IF iv_input IS INITIAL.\n';
+            code += '    RAISE invalid_input.\n';
+            code += '  ENDIF.\n\n';
+            code += '  ev_output = |Result: { iv_input }|.\n\n';
+            code += 'ENDFUNCTION.';
+            return code;
+        }
+
+        function generateRAPCode() {
+            var code = 'managed implementation in class zbp_generated unique;\n';
+            code += 'strict ( 2 );\n\n';
+            code += 'define behavior for Z_I_Generated alias Generated\n';
+            code += 'persistent table ztable\n';
+            code += 'lock master\n';
+            code += '{\n';
+            code += '  field ( readonly ) ID;\n';
+            code += '  field ( numbering : managed ) ID;\n\n';
+            code += '  create;\n';
+            code += '  update;\n';
+            code += '  delete;\n';
+            code += '}';
+            return code;
+        }
+
+        function generateAMDPCode() {
+            var code = 'CLASS zcl_amdp DEFINITION PUBLIC FINAL CREATE PUBLIC.\n';
+            code += '  PUBLIC SECTION.\n';
+            code += '    INTERFACES if_amdp_marker_hdb.\n\n';
+            code += '    CLASS-METHODS get_data\n';
+            code += '      IMPORTING VALUE(iv_vkorg) TYPE vkorg\n';
+            code += '      EXPORTING VALUE(et_result) TYPE vbak_t.\n';
+            code += 'ENDCLASS.\n\n';
+            code += 'CLASS zcl_amdp IMPLEMENTATION.\n';
+            code += '  METHOD get_data BY DATABASE PROCEDURE FOR HDB\n';
+            code += '    LANGUAGE SQLSCRIPT OPTIONS READ-ONLY USING vbak.\n';
+            code += '    et_result = SELECT * FROM vbak WHERE vkorg = :iv_vkorg;\n';
+            code += '  ENDMETHOD.\n';
+            code += 'ENDCLASS.';
+            return code;
+        }
+
         function analyzeCode(code, options) {
-            const issues = [];
-            const metrics = {
-                linesOfCode: code.split('\n').length,
-                issues: 0,
-                improvements: 0,
-                quality: 0
-            };
+            var issues = [];
+            var metrics = { linesOfCode: code.split('\n').length, issues: 0, improvements: 0, quality: 100 };
 
-            // Check for old syntax patterns
-            if (options.includes('modernize')) {
-                if (/DATA:.*TYPE TABLE OF/i.test(code)) {
-                    issues.push({ type: 'warning', message: 'Consider using inline declarations (DATA(...))' });
-                }
-                if (/MOVE\s+\w+\s+TO\s+\w+/i.test(code)) {
-                    issues.push({ type: 'warning', message: 'Replace MOVE with assignment operator (=)' });
-                }
-                if (/IF\s+NOT\s+\w+\s+IS\s+INITIAL/i.test(code)) {
-                    issues.push({ type: 'info', message: 'Use "IS NOT INITIAL" instead of "NOT ... IS INITIAL"' });
-                }
-                if (/CONCATENATE/i.test(code)) {
-                    issues.push({ type: 'info', message: 'Consider using string templates (|...|) instead of CONCATENATE' });
-                }
+            if (options.indexOf('modernize') >= 0) {
+                if (/DATA:.*TYPE TABLE OF/i.test(code)) issues.push({ type: 'warning', message: 'Use inline declarations DATA(...)' });
+                if (/CONCATENATE/i.test(code)) issues.push({ type: 'info', message: 'Use string templates |...|' });
             }
 
-            // Performance checks
-            if (options.includes('performance')) {
-                if (/SELECT\s+\*/i.test(code)) {
-                    issues.push({ type: 'error', message: 'Avoid SELECT *. Specify required fields explicitly' });
-                }
-                if (/SELECT.*ENDSELECT/is.test(code)) {
-                    issues.push({ type: 'error', message: 'Replace SELECT...ENDSELECT with SELECT INTO TABLE' });
-                }
-                if (/LOOP.*READ TABLE.*ENDLOOP/is.test(code)) {
-                    issues.push({ type: 'warning', message: 'Consider using sorted/hashed tables for nested READ' });
-                }
-                if (/SELECT.*INTO\s+TABLE.*\.\s*LOOP/is.test(code)) {
-                    issues.push({ type: 'info', message: 'Consider using FOR ALL ENTRIES for related selects' });
-                }
+            if (options.indexOf('performance') >= 0) {
+                if (/SELECT\s+\*/i.test(code)) issues.push({ type: 'error', message: 'Avoid SELECT * - specify fields' });
+                if (/SELECT.*ENDSELECT/is.test(code)) issues.push({ type: 'error', message: 'Use INTO TABLE instead of ENDSELECT' });
             }
 
-            // Debug checks
-            if (options.includes('debug')) {
-                if (!/TRY.*CATCH/is.test(code)) {
-                    issues.push({ type: 'warning', message: 'Missing exception handling (TRY...CATCH)' });
-                }
-                if (!/SY-SUBRC/i.test(code) && /SELECT/i.test(code)) {
-                    issues.push({ type: 'warning', message: 'Check SY-SUBRC after database operations' });
-                }
+            if (options.indexOf('debug') >= 0) {
+                if (!/TRY.*CATCH/is.test(code)) issues.push({ type: 'warning', message: 'Add TRY...CATCH exception handling' });
+                if (!/sy-subrc/i.test(code) && /SELECT/i.test(code)) issues.push({ type: 'warning', message: 'Check SY-SUBRC after SELECT' });
             }
 
-            // Security checks
-            if (options.includes('security')) {
-                if (/SELECT.*FROM.*WHERE.*USER/i.test(code) && !/AUTHORITY-CHECK/i.test(code)) {
-                    issues.push({ type: 'error', message: 'Missing authorization check before data access' });
-                }
-            }
+            metrics.issues = issues.filter(function(i) { return i.type === 'error'; }).length;
+            metrics.improvements = issues.filter(function(i) { return i.type !== 'error'; }).length;
+            metrics.quality = Math.max(0, 100 - metrics.issues * 15 - metrics.improvements * 5);
 
-            metrics.issues = issues.filter(i => i.type === 'error').length;
-            metrics.improvements = issues.filter(i => i.type === 'warning' || i.type === 'info').length;
-            metrics.quality = Math.max(0, 100 - (metrics.issues * 15) - (metrics.improvements * 5));
-
-            return { issues, metrics };
+            return { issues: issues, metrics: metrics };
         }
 
-        // Display metrics
-        function displayMetrics(metrics) {
-            const grid = document.getElementById('metricsGrid');
-            grid.innerHTML = `
-                <div class="metric-card">
-                    <div class="metric-value">${metrics.linesOfCode}</div>
-                    <div class="metric-label">Lines of Code</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value" style="color: var(--error);">${metrics.issues}</div>
-                    <div class="metric-label">Critical Issues</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value" style="color: var(--warning);">${metrics.improvements}</div>
-                    <div class="metric-label">Improvements</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value" style="color: ${metrics.quality >= 70 ? 'var(--success)' : metrics.quality >= 40 ? 'var(--warning)' : 'var(--error)'};">${metrics.quality}%</div>
-                    <div class="metric-label">Quality Score</div>
-                </div>
-            `;
+        function displayMetrics(m) {
+            var qColor = m.quality >= 70 ? 'var(--success)' : m.quality >= 40 ? 'var(--warning)' : 'var(--error)';
+            var html = '<div class="metric-card"><div class="metric-value">' + m.linesOfCode + '</div><div class="metric-label">Lines</div></div>';
+            html += '<div class="metric-card"><div class="metric-value" style="color:var(--error)">' + m.issues + '</div><div class="metric-label">Issues</div></div>';
+            html += '<div class="metric-card"><div class="metric-value" style="color:var(--warning)">' + m.improvements + '</div><div class="metric-label">Suggestions</div></div>';
+            html += '<div class="metric-card"><div class="metric-value" style="color:' + qColor + '">' + m.quality + '%</div><div class="metric-label">Quality</div></div>';
+            document.getElementById('metricsGrid').innerHTML = html;
         }
 
-        // Display analysis
         function displayAnalysis(issues) {
-            const container = document.getElementById('analysisResults');
-            
             if (issues.length === 0) {
-                container.innerHTML = `
-                    <div class="analysis-section">
-                        <div class="analysis-header">
-                            <span class="analysis-badge badge-success">✓ No Issues Found</span>
-                        </div>
-                        <p style="color: var(--text-secondary);">Your code looks good! No significant issues detected.</p>
-                    </div>
-                `;
+                document.getElementById('analysisResults').innerHTML = '<div class="analysis-badge badge-success">No issues found!</div>';
                 return;
             }
 
-            const errors = issues.filter(i => i.type === 'error');
-            const warnings = issues.filter(i => i.type === 'warning');
-            const infos = issues.filter(i => i.type === 'info');
-
-            let html = '';
-
-            if (errors.length > 0) {
-                html += `
-                    <div class="analysis-section">
-                        <div class="analysis-header">
-                            <span class="analysis-title">Critical Issues</span>
-                            <span class="analysis-badge badge-error">${errors.length} found</span>
-                        </div>
-                        <ul class="analysis-list">
-                            ${errors.map(e => `
-                                <li class="analysis-item">
-                                    <span class="analysis-item-icon error">!</span>
-                                    ${e.message}
-                                </li>
-                            `).join('')}
-                        </ul>
-                    </div>
-                `;
-            }
-
-            if (warnings.length > 0) {
-                html += `
-                    <div class="analysis-section">
-                        <div class="analysis-header">
-                            <span class="analysis-title">Warnings</span>
-                            <span class="analysis-badge badge-warning">${warnings.length} found</span>
-                        </div>
-                        <ul class="analysis-list">
-                            ${warnings.map(w => `
-                                <li class="analysis-item">
-                                    <span class="analysis-item-icon warning">⚠</span>
-                                    ${w.message}
-                                </li>
-                            `).join('')}
-                        </ul>
-                    </div>
-                `;
-            }
-
-            if (infos.length > 0) {
-                html += `
-                    <div class="analysis-section">
-                        <div class="analysis-header">
-                            <span class="analysis-title">Suggestions</span>
-                            <span class="analysis-badge badge-info">${infos.length} found</span>
-                        </div>
-                        <ul class="analysis-list">
-                            ${infos.map(i => `
-                                <li class="analysis-item">
-                                    <span class="analysis-item-icon info">i</span>
-                                    ${i.message}
-                                </li>
-                            `).join('')}
-                        </ul>
-                    </div>
-                `;
-            }
-
-            container.innerHTML = html;
+            var html = '<ul class="analysis-list">';
+            issues.forEach(function(i) {
+                var icon = i.type === 'error' ? 'error' : i.type === 'warning' ? 'warning' : 'info';
+                var symbol = i.type === 'error' ? '!' : i.type === 'warning' ? '⚠' : 'i';
+                html += '<li class="analysis-item"><span class="analysis-item-icon ' + icon + '">' + symbol + '</span>' + escapeHtml(i.message) + '</li>';
+            });
+            html += '</ul>';
+            document.getElementById('analysisResults').innerHTML = html;
         }
 
-        // Refine code
-        function refineCode(code, options) {
-            let refined = code;
+        function refineCode(code, options, req) {
+            var refined = code;
 
-            if (options.includes('modernize')) {
-                // Replace old DATA declarations with inline
-                refined = refined.replace(
-                    /DATA:\s*(\w+)\s+TYPE\s+TABLE\s+OF\s+(\w+)\./gi,
-                    'DATA($1) = VALUE $2( ).'
-                );
-                
-                // Replace MOVE with assignment
-                refined = refined.replace(
-                    /MOVE\s+(\w+)\s+TO\s+(\w+)\./gi,
-                    '$2 = $1.'
-                );
-
-                // Replace IF NOT x IS INITIAL with IF x IS NOT INITIAL
-                refined = refined.replace(
-                    /IF\s+NOT\s+(\w+)\s+IS\s+INITIAL/gi,
-                    'IF $1 IS NOT INITIAL'
-                );
-
-                // Replace CONCATENATE with string template
-                refined = refined.replace(
-                    /CONCATENATE\s+(\w+)\s+(\w+)\s+INTO\s+(\w+)(?:\s+SEPARATED BY\s+'([^']*)')?\./gi,
-                    (match, v1, v2, target, sep) => {
-                        return sep ? `${target} = |{ ${v1} }${ sep }{ ${v2} }|.` : `${target} = |{ ${v1} }{ ${v2} }|.`;
-                    }
-                );
+            if (options.indexOf('modernize') >= 0) {
+                refined = refined.replace(/SELECT\s+\*\s+FROM\s+(\w+)\s+INTO\s+TABLE\s+(\w+)/gi,
+                    'SELECT vbeln, erdat, kunnr, netwr\n    FROM $1\n    INTO TABLE @$2');
             }
 
-            if (options.includes('performance')) {
-                // Replace SELECT * with specific fields (add comment)
-                refined = refined.replace(
-                    /SELECT\s+\*\s+FROM\s+(\w+)/gi,
-                    '* TODO: Replace SELECT * with specific fields\nSELECT * FROM $1'
-                );
-
-                // Add PACKAGE SIZE hint for large selects
-                if (/SELECT.*INTO TABLE.*WHERE/is.test(refined) && !/UP TO/i.test(refined)) {
-                    refined = refined.replace(
-                        /(SELECT.*INTO TABLE.*WHERE)/gis,
-                        '* Consider adding "UP TO n ROWS" for large datasets\n$1'
-                    );
+            if (options.indexOf('error-handling') >= 0 || options.indexOf('debug') >= 0) {
+                if (!/sy-subrc/i.test(refined) && /SELECT/i.test(refined)) {
+                    refined = refined.replace(/(SELECT[\s\S]*?INTO TABLE[^.]*\.)/gi,
+                        '$1\n\n  IF sy-subrc <> 0.\n    MESSAGE \'No data\' TYPE \'S\' DISPLAY LIKE \'W\'.\n  ENDIF.');
                 }
             }
 
-            if (options.includes('debug') || options.includes('error-handling')) {
-                // Wrap in TRY-CATCH if not present
-                if (!/TRY\./i.test(refined) && /SELECT/i.test(refined)) {
-                    const mainCode = refined.match(/START-OF-SELECTION\.([\s\S]*?)(?=\*&|$)/i);
-                    if (mainCode) {
-                        const wrappedCode = `START-OF-SELECTION.
-
-  TRY.
-${mainCode[1].split('\n').map(line => '    ' + line).join('\n')}
-    CATCH cx_root INTO DATA(lx_error).
-      MESSAGE lx_error->get_text( ) TYPE 'E'.
-  ENDTRY.`;
-                        refined = refined.replace(mainCode[0], wrappedCode);
-                    }
-                }
-
-                // Add SY-SUBRC checks after SELECT if not present
-                if (!/sy-subrc/i.test(refined)) {
-                    refined = refined.replace(
-                        /(SELECT.*INTO TABLE \w+.*\.)/gi,
-                        '$1\n\n  IF sy-subrc <> 0.\n    MESSAGE \'No data found\' TYPE \'S\' DISPLAY LIKE \'W\'.\n    RETURN.\n  ENDIF.'
-                    );
-                }
+            if (options.indexOf('comments') >= 0) {
+                refined = refined.replace(/^(FORM\s+(\w+)\.)/gim,
+                    '*&---------------------------------------------------------------------*\n*& Form $2\n*&---------------------------------------------------------------------*\n$1');
             }
 
-            if (options.includes('comments')) {
-                // Add method/form comments
-                refined = refined.replace(
-                    /FORM\s+(\w+)\./gi,
-                    '*&---------------------------------------------------------------------*\n*& Form $1\n*&---------------------------------------------------------------------*\nFORM $1.'
-                );
-
-                refined = refined.replace(
-                    /METHOD\s+(\w+)\./gi,
-                    '  "---------------------------------------------------------------------\n  " Method: $1\n  "---------------------------------------------------------------------\n  METHOD $1.'
-                );
+            if (options.indexOf('selection') >= 0 && !/PARAMETERS|SELECT-OPTIONS/i.test(refined)) {
+                var sel = '\nPARAMETERS: p_vkorg TYPE vkorg.\nSELECT-OPTIONS: s_erdat FOR sy-datum.\n\nSTART-OF-SELECTION.\n';
+                refined = refined.replace(/(REPORT\s+\w+\.)/i, '$1' + sel);
             }
 
-            if (options.includes('naming')) {
-                // Improve variable naming conventions
-                refined = refined.replace(/\blt_tab\b/gi, 'lt_data');
-                refined = refined.replace(/\bls_str\b/gi, 'ls_data');
-                refined = refined.replace(/\blv_var\b/gi, 'lv_value');
+            if (options.indexOf('alv') >= 0 && !/cl_salv_table/i.test(refined)) {
+                refined += '\n\nFORM display_alv USING pt_data TYPE STANDARD TABLE.\n';
+                refined += '  TRY.\n';
+                refined += '      cl_salv_table=>factory(\n';
+                refined += '        IMPORTING r_salv_table = DATA(lo_alv)\n';
+                refined += '        CHANGING t_table = pt_data ).\n';
+                refined += '      lo_alv->display( ).\n';
+                refined += '    CATCH cx_salv_msg.\n';
+                refined += '  ENDTRY.\n';
+                refined += 'ENDFORM.';
+            }
+
+            if (req) {
+                refined = '* Requirement: ' + req.substring(0, 60) + '\n' + refined;
             }
 
             return refined;
-        }
-
-        // Clear generator form
-        function clearGeneratorForm() {
-            document.getElementById('requirement').value = '';
-            document.getElementById('keyPoints').value = '';
-            document.getElementById('generatedCodeContainer').innerHTML = `
-                <div class="empty-state">
-                    <div class="empty-state-icon">
-                        <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                        </svg>
-                    </div>
-                    <div class="empty-state-title">No Code Generated Yet</div>
-                    <p>Enter your requirements and click "Generate ABAP Code" to get started</p>
-                </div>
-            `;
-        }
-
-        // Clear refiner form
-        function clearRefinerForm() {
-            document.getElementById('inputCode').value = '';
-            document.getElementById('analysisCard').style.display = 'none';
-            document.getElementById('refinedCodeContainer').innerHTML = `
-                <div class="empty-state">
-                    <div class="empty-state-icon">
-                        <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-                        </svg>
-                    </div>
-                    <div class="empty-state-title">No Code Refined Yet</div>
-                    <p>Paste your ABAP code and click "Analyze & Refine" to get started</p>
-                </div>
-            `;
         }
     </script>
 </body>
